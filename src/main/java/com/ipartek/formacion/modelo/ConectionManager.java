@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConectionManager {
 
-	private static final String PATH = "ddbb/perrera.db";
+	private static final String PATH = "c://ddbb/perrera.db";
 	
 	static public Connection getConnection() throws ClassNotFoundException, SQLException {
 		

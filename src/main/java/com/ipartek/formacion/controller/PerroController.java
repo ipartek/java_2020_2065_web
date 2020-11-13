@@ -18,7 +18,7 @@ import com.ipartek.formacion.pojo.Perro;
 @WebServlet("/perro")
 public class PerroController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private PerroDAOSqlite dao = PerroDAOSqlite.getInstance();
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -30,7 +30,7 @@ public class PerroController extends HttpServlet {
 
 		// conseguir perros llamado al modelo
 		try {
-			PerroDAOSqlite dao = PerroDAOSqlite.getInstance();
+			
 			lista = dao.listar();
 
 		} catch (Exception e) {
@@ -62,6 +62,15 @@ public class PerroController extends HttpServlet {
 		Perro p = new Perro();
 		p.setNombre(parametroNombre);
 		p.setRaza(raza);
+		
+		//guardarlo en la bbdd
+		try {
+			dao.crear(p);
+			
+		} catch (Exception e) {			
+			e.printStackTrace();
+			request.setAttribute("mensaje", "Lo sentimos pero " + p.getNombre() +" de perro ya existe" );
+		}
 		
 		// enviarlos a la JSP
 		request.setAttribute("perro", p);

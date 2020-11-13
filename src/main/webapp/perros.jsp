@@ -11,6 +11,7 @@
 	<h1>Perrera</h1>
 	
 	
+	
 	 <ul>
 		 <c:forEach items="${perros}" var="perro">
 		 	<li>${perro.id} ${perro.nombre} ${perro.raza}</li>	

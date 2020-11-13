@@ -8,7 +8,12 @@
 </head>
 <body>
 
-	<h1>Perro Creado</h1>
+	<a href="index.jsp">Volver</a>
+	<a href="perro">Ver todos los perros</a>
+
+	<h1>Perro</h1>
+	
+	<p style="color:red">${mensaje}</p>
 	
 	${perro}
 	
