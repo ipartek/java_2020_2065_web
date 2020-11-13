@@ -37,11 +37,7 @@ public class PerroController extends HttpServlet {
 
 			e.printStackTrace();
 
-		} finally {
-			lista.add(new Perro("buba", "boxer", 3));
-			lista.add(new Perro("Snoppy", "cruce", 3));
-			lista.add(new Perro("pulgas", "otra", 20));
-		}
+		} 
 
 		// enviarlos a la JSP
 		request.setAttribute("perros", lista);
