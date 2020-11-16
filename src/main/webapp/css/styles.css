@@ -1,0 +1,44 @@
+
+:root {
+	--color-primary: #2196f3;
+	--color-accent: #ff9800;
+	--color-white: #FFF;
+}
+
+
+nav {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+}
+
+nav ul {
+	display: flex;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+nav li {
+	list-style: none;
+	padding: 5px 10px;
+}
+
+nav li a {
+	color: var(--color-white);
+	text-decoration: none;
+}
+
+nav li a:hover {
+	background-color: var(--color-accent);	
+}
+
+.container {
+	max-width: 1024px;
+	margin: auto;
+	padding: 0 0.75rem;
+}
+
+footer {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	padding: 1rem;
+}
