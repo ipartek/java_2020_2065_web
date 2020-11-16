@@ -11,7 +11,7 @@ public class Perro extends Mamifero  {
 	private int id;	
 	private String raza;
 	private float peso;
-	private boolean isVacunado;
+	private boolean vacunado;
 	private String historia;
 	
 	// Constructores
@@ -21,7 +21,7 @@ public class Perro extends Mamifero  {
 		this.id = 0;
 		this.raza = RAZA_POR_DEFECTO;
 		this.peso = 0f;
-		this.isVacunado = false;
+		this.vacunado = false;
 		this.historia = "Erase una vez....";
 	}
 	
@@ -33,7 +33,7 @@ public class Perro extends Mamifero  {
 		this.id = 0;
 		this.raza = RAZA_POR_DEFECTO;
 		this.peso = 0f;
-		this.isVacunado = false;
+		this.vacunado = false;
 		this.historia = "Erase una vez....";		
 	}
 	
@@ -91,11 +91,11 @@ public class Perro extends Mamifero  {
 	}
 
 	public boolean isVacunado() {
-		return isVacunado;
+		return vacunado;
 	}
 
-	public void setVacunado(boolean isVacunado) {
-		this.isVacunado = isVacunado;
+	public void setVacunado(boolean vacunado) {
+		this.vacunado = vacunado;
 	}
 
 	public String getHistoria() {
@@ -116,7 +116,7 @@ public class Perro extends Mamifero  {
 
 	@Override
 	public String toString() {
-		return "Perro [id=" + id + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado + ", historia="
+		return "Perro [id=" + id + ", raza=" + raza + ", peso=" + peso + ", vacunado=" + vacunado + ", historia="
 				+ historia + ", getNombre()=" + getNombre() + ", getPatas()=" + getPatas() + "]";
 	}
 
