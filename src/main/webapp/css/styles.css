@@ -9,11 +9,13 @@
 nav {
 	background-color: var(--color-primary);
 	color: var(--color-white);
+	margin-bottom: 1rem;
 }
 
 nav ul {
 	display: flex;
     padding: 1rem;
+    margin: 0;
     justify-content: space-evenly;
 }
 
@@ -37,8 +39,13 @@ nav li a:hover {
 	padding: 0 0.75rem;
 }
 
+main {
+	min-height: 80vh;
+}
+
 footer {
 	background-color: var(--color-primary);
 	color: var(--color-white);
 	padding: 1rem;
+	margin-top: 1rem;
 }
