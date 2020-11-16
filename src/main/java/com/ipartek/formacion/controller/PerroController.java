@@ -13,9 +13,10 @@ import com.ipartek.formacion.modelo.PerroDAOSqlite;
 import com.ipartek.formacion.pojo.Perro;
 
 /**
- * @WebServlet("/perro") es la URL donde escucha este controlador
+ * @WebServlet("/perro-controller") es la URL donde escucha este controlador.
+ * No tiene nada que ver con el nombre de la clase PerroController extends HttpServlet
  */
-@WebServlet("/perro")
+@WebServlet("/perro-controller")
 public class PerroController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PerroDAOSqlite dao = PerroDAOSqlite.getInstance();
@@ -27,10 +28,8 @@ public class PerroController extends HttpServlet {
 			throws ServletException, IOException {
 
 		ArrayList<Perro> lista = new ArrayList<Perro>();
-
-		// conseguir perros llamado al modelo
 		try {
-			
+			// conseguir datos llamado al modelo ( bbdd ) 
 			lista = dao.listar();
 
 		} catch (Exception e) {
@@ -39,11 +38,15 @@ public class PerroController extends HttpServlet {
 
 		} 
 
-		// enviarlos a la JSP
+		// Los DATOS (atributos) a enviar a la vista para pintarlos
+		// request.setAttribute( String, Objeto);
+		// String podeis poner el nombre que querais, pero eso mismo nombre lo usaremos en la JSP para acceder al Objeto
+		// Objeto, podeis enviar lo que querais: String, boolean, Perro, ArrayList<Perro>,....		
 		request.setAttribute("perros", lista);
+		request.setAttribute("mensaje", "Recuperados " + lista.size() + " perros");
 
-		// ir a la JSP
-		request.getRequestDispatcher("perros.jsp").forward(request, response);
+		// Comando para ir a la VISTA, hacemos un "forwad" y escribimos el nombre de la JSP "perros.jsp" 
+		request.getRequestDispatcher("tabla-perros.jsp").forward(request, response);
 
 	}
 

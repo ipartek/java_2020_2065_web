@@ -7,9 +7,10 @@
 %>
 
 <p>Esto hace una peticion GET al controlador</p>
-<a href="perro">Listado de Perros</a>
+<a href="perro-controller">Listado de Perros</a>
 
-<form method="post" action="perro">
+
+<form method="post" action="perro-controller">
 	<p>Esto envia datos por POST al controlador</p>
 	<input type="text" name="nombre" placeholder="Nombre del perro" required>
 	<br>
