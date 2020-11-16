@@ -6,12 +6,34 @@
 	<h1>${mensaje}</h1>
 	
 	<p>* Si queremos ver la historia del perro, tendremos que acceder a sus detalles</p>
-	
-	 <ul>
-		 <c:forEach items="${perros}" var="perro">
-		 	<li>${perro.id} <a href="perro-detalle?id=${perro.id}">${perro.nombre}</a> ${perro.raza} ${perro.peso} ${perro.vacunado}</li>	
-		 </c:forEach>
-	 </ul>
+	 
+	 <table>	 
+	 	<caption>Perro dados de Alta en la Perrera</caption>	 	
+	 	<thead>
+	 		<tr>
+	 			<th>Id</th>
+	 			<th>Nombre</th>
+	 			<th>Raza</th>
+	 			<th>Vacunado</th>
+	 		</tr>
+	 	</thead>	 	
+	 	<tbody>
+	 	 	<!-- repertir por cada perro -->
+	 	 	<c:forEach items="${perros}" var="p">
+		 		<tr>
+		 			<td>${p.id}</td>
+		 			<td>${p.nombre}</td>
+		 			<td>${p.raza}</td>
+		 			<td>${ (p.vacunado) ? 'Si' : 'No' }</td>
+		 		</tr>
+		 	</c:forEach>	
+	 	</tbody>	 	
+	 	<tfoot>
+	 		<tr>
+	 			<td colspan="4">Total de perros X</td>
+	 		</tr>
+	 	</tfoot>	 	
+	 </table>
 	
 
 <jsp:include page="includes/pie.jsp" />
