@@ -7,3 +7,7 @@ ${perro}
 
 <hr>
 ${perro.historia}
+
+
+<hr>
+<a href="perro-eliminar?id=${perro.id}">ELIMINAR PERRO, Cuidado no tiene vuelta atras!!!</a>
