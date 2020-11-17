@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo de la Pestaña</title>
+    
+    <!--  icono y descripcion Pestaña -->
+    <title>Perrera Web</title>
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
+    
     
     <!-- enlaces a nuestras hojas de estilo -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -12,6 +16,7 @@
 </head>
 <body>
 	<header>
+		
 		<nav>
 			<ul>
 				<li><a href="index.jsp">Inicio</a></li>
