@@ -3,10 +3,15 @@
 	--color-primary: #2196f3;
 	--color-accent: #ff9800;
 	--color-white: #FFF;
+	--color-background-start: #f7fbfe; /* rgba(247,251,254,1) */
+	--color-background-end: #fbfcff;   /* rgba(247,251,254,1) */
+	
 }
 
 body {
 	font-family: 'Roboto', sans-serif;
+	background-color: var(--color-background-start);
+    background: linear-gradient(0deg, rgba(235,240,245,1) 0%, rgba(247,251,254,1) 100%);
 }
 
 
@@ -54,8 +59,7 @@ main {
 footer {
 	background-color: var(--color-primary);
 	color: var(--color-white);
-	padding: 1rem;
-	margin-top: 1rem;
+	padding: 1rem;	
 }
 
 /*  tabla
@@ -93,3 +97,38 @@ tfoot td {
 	text-align: right;
 }
 
+.boton {
+	
+}
+
+
+/* Hero
+***********************************************************/
+
+/* The hero image */
+.hero-image {
+  
+  background-image: url("../imagenes/back_dog.jpg");
+  
+  /*  
+      vh == deVice Height, en este caso usamos el 80% de altura del dispositivo, 
+      el % no suele funcionar bien en el navegador
+      */
+  height: 80vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-primary);
+}

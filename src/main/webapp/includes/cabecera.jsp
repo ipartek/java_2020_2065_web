@@ -31,7 +31,7 @@
     
     <!-- enlaces a nuestras hojas de estilo -->
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?d=12">
 
 </head>
 <body>
