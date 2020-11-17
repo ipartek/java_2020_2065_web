@@ -15,6 +15,7 @@
 	 			<th>Nombre</th>
 	 			<th>Raza</th>
 	 			<th>Vacunado</th>
+	 			<th>Acciones</th>
 	 		</tr>
 	 	</thead>	 	
 	 	<tbody>
@@ -25,12 +26,16 @@
 		 			<td>${p.nombre}</td>
 		 			<td>${p.raza}</td>
 		 			<td>${ (p.vacunado) ? 'Si' : 'No' }</td>
+		 			<td class="flex">
+		 				<a href="perro-detalle?id=${p.id}"><i class="fa fa-eye"></i></a> 
+		 				<a href="perro-eliminar?id=${p.id}"><i class="fa fa-trash"></i></a>		 				 
+		 			</td>
 		 		</tr>
 		 	</c:forEach>	
 	 	</tbody>	 	
 	 	<tfoot>
 	 		<tr>
-	 			<td colspan="4">Total de perros X</td>
+	 			<td colspan="5">Total de perros X</td>
 	 		</tr>
 	 	</tfoot>	 	
 	 </table>

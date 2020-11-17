@@ -1,3 +1,13 @@
+/*
+*    1. reset o normalize ( se suele incluir en head con otro .css )
+*    2. Animaciones o @keyframes ( no vamos a verla en este curso )
+*    3. variables globales
+*    4. Etiquetas de HTML
+*    5. Layouts ( header, main, footer, nav, ... )
+*    6. Clases ( botones, hero .... )
+*    7. Selectores mas particulares ( para un id concreto, o pagina,....)
+*/
+
 
 :root {
 	--color-primary: #2196f3;
@@ -14,6 +24,10 @@ body {
     background: linear-gradient(0deg, rgba(235,240,245,1) 0%, rgba(247,251,254,1) 100%);
 }
 
+h1, h2, h3, h4, h5, h6 {
+	color: var(--color-primary);
+	text-transform: capitalize;
+}
 
 nav {
 	background-color: var(--color-primary);
@@ -44,6 +58,21 @@ nav li a {
 nav li a:hover {
 	background-color: var(--color-accent);	
 }
+
+
+/* fotawesome
+************************************************/
+.fa {
+	font-size: 1.5rem;
+	color: var(--color-primary);
+}
+.fa:hover {		
+	color: var(--color-accent);	
+}
+
+
+/* Layouts
+*************************************************/
 
 .container {
 	max-width: 1024px;
@@ -97,24 +126,31 @@ tfoot td {
 	text-align: right;
 }
 
+.flex {
+	display: flex;
+	justify-content: space-around;
+}
+
 .boton {   
     padding: 5px 12px;
     min-height: 60px;    
-    text-decoration: none;
     display: flex;
     justify-content: center;
-    align-items: center;    
-    text-transform: uppercase;
+    align-items: center;
+    
+    text-decoration: none;    
+    text-transform: uppercase;    
+    color: var(--color-primary);
+    
     background-color: var(--color-white);
     border: 1px solid var(--color-primary);
-    border-radius: 10px;
-    color: var(--color-primary);
+    border-radius: 10px;    
 }
 
 .boton:hover {
   transition: 1s;
   color: var(--color-white);
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
 }
 
 
@@ -149,3 +185,4 @@ tfoot td {
   transform: translate(-50%, -50%);
   color: var(--color-primary);
 }
+
