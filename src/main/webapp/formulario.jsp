@@ -21,12 +21,12 @@
 			
 			<div class="form-group">
 				<label for="peso">Peso(kg):</label>
-				<input type="number" id="peso" name="peso" placeholder="Peso en Kilogramos" required>
+				<input type="text" id="peso" name="peso" placeholder="Peso en Kilogramos" required>
 			</div>
 			
 			<div class="form-group">
 				<label for="vacunado">Marca si esta Vacunado</label>
-				<input type="checkbox" id="vacunado" name="vacunado" checked>
+				<input type="checkbox" id="vacunado" name="vacunado" class="w-7" checked>
 			</div>
 			
 			<div class="form-group">

@@ -186,6 +186,10 @@ tfoot td {
   background-color: var(--color-accent);
 }
 
+.w-7 {
+	width: 7% !important;
+}
+
 
 
 /* Hero
