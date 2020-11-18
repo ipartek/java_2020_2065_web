@@ -45,7 +45,7 @@
 			<ul>
 				<li><a href="index.jsp">Inicio</a></li>
 				<li><a href="perro-controller">Ver Perros</a></li>
-				<li><a href="formulario.jsp">Dar de Alta Perro nuevo</a></li>
+				<li><a href="perro-editar?id=0">Dar de Alta Perro nuevo</a></li>
 			</ul>
 		</nav>
 	</header>

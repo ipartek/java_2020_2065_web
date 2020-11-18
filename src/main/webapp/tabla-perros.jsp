@@ -27,6 +27,7 @@
 		 			<td>${p.raza}</td>
 		 			<td>${ (p.vacunado) ? 'Si' : 'No' }</td>
 		 			<td class="flex">
+		 				<a href="perro-editar?id=${p.id}"><i class="fa fa-pencil"></i></a>
 		 				<a href="perro-detalle?id=${p.id}"><i class="fa fa-eye"></i></a> 
 		 				<a href="perro-eliminar?id=${p.id}"><i class="fa fa-trash"></i></a>		 				 
 		 			</td>

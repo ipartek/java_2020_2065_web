@@ -136,13 +136,16 @@ public class PerroDAOSqlite implements PerroDao {
 	@Override
 	public Perro modificar(Perro p) throws Exception {
 		Perro perro = null;
-		final String SQL = "UPDATE perro nombre = ? , peso = ? WHERE id = ?;";
+		final String SQL = "UPDATE perro SET nombre = ? , peso = ?, raza = ? , historia = ?, vacunado = ? WHERE id = ?;";
 		try (Connection conn = ConectionManager.getConnection();
 				PreparedStatement pst = conn.prepareStatement(SQL);) {
 
 			pst.setString(1, p.getNombre());
 			pst.setFloat(2, p.getPeso());
-			pst.setInt(3, p.getId());
+			pst.setString(3, p.getRaza());
+			pst.setString(4, p.getHistoria());
+			pst.setBoolean(5, p.isVacunado() );
+			pst.setInt(6, p.getId());
 
 			pst.executeUpdate(); // CUIDADO no usar executeQuery
 
