@@ -37,9 +37,11 @@ public class EditarContreller extends HttpServlet {
 		String parametroId = request.getParameter("id");
 		int id = Integer.parseInt(parametroId);
 
-		Perro perro = new Perro();
+		Perro perro = null;
 
-		if (id > 0) {
+		if (id == 0) {
+			perro = new Perro();
+		}else {
 			perro = dao.recuperar(id);
 		}
 
