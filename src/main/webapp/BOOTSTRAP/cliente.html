@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <title>Edición de cliente</title>
+</head>
+
+<body class="container-fluid">
+    <h1>Edición de cliente</h1>
+
+    <form action="clientes.html" class="needs-validation" novalidate>
+        <div class="form-group row">
+            <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nombre" required minlength="3" pattern="[A-Z][a-z]*"
+                    placeholder="Debe introducir un nombre con solo letras y mayúscula la primera">
+                <div class="valid-feedback">Nombre correcto</div>
+                <div class="invalid-feedback">Debe introducir un nombre con como mínimo 3 letras, y solo letras y
+                    mayúscula la primera</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="apellidos" class="col-sm-2 col-form-label">Apellidos</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="apellidos" required>
+                <div class="valid-feedback">Apellidos correctos</div>
+                <div class="invalid-feedback">Es obligatorio rellenar los apellidos</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="facturacion-estimada" class="col-sm-2 col-form-label">Facturación estimada</label>
+            <div class="input-group col-sm-10">
+                <input type="number" class="form-control" id="facturacion-estimada" required>
+
+                <div class="input-group-append">
+                    <span class="input-group-text rounded-right" id="basic-addon2">€</span>
+                </div>
+
+                <div class="valid-feedback">Facturación correcta</div>
+                <div class="invalid-feedback">Debe rellenarse y ser mayor que 0</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>

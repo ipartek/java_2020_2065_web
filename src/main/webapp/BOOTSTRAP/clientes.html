@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <title>Listado clientes</title>
+</head>
+
+<body class="container-fluid">
+    <nav class="row navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Menú principal">
+        <a class="navbar-brand" href="#">Clientes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Mantenimiento de clientes<span class="sr-only">(actual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cliente.html">Edición de un cliente</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li>
+                    <span class="navbar-text">
+                        Javier Lete
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="row" aria-label="breadcrumb">
+        <ol class="col-12 breadcrumb">
+            <li class="breadcrumb-item"><a href="cliente.html">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="cliente.html">Mantenimiento</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+        </ol>
+    </nav>
+    <div class="row alert alert-info alert-dismissible fade show" role="alert">
+        Bienvenido al mantenimiento de clientes
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover table-sm">
+            <caption>Listado de clientes</caption>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Javier</td>
+                    <td>Lete</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Opciones">
+                            <a class="btn btn-primary btn-sm" href="cliente.html">Editar</a>
+                            <a class="btn btn-danger btn-sm" href="cliente.html">Borrar</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Pepe</td>
+                    <td>Pérez</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Opciones">
+                            <a class="btn btn-outline-primary btn-sm" href="cliente.html">Editar</a>
+                            <a class="btn btn-outline-danger btn-sm" href="cliente.html">Borrar</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Francisco&nbsp;Javier</td>
+                    <td>Lete</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Opciones">
+                            <a class="btn btn-primary btn-sm" href="cliente.html">Editar</a>
+                            <a class="btn btn-danger btn-sm" href="cliente.html">Borrar</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Pepe</td>
+                    <td>Pérez</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Opciones">
+                            <a class="btn btn-primary btn-sm" href="cliente.html">Editar</a>
+                            <a class="btn btn-danger btn-sm" href="cliente.html">Borrar</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
