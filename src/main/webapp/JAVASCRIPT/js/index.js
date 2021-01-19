@@ -1,3 +1,111 @@
+
+'use strict'; // ES5
+
+window.onload = function () {
+    const h1s = document.getElementsByTagName('h1');
+    console.log(h1s.length);
+    console.log(h1s);
+
+    for (let h1 of h1s) {
+        console.log(h1);
+        h1.innerText = 'Hola desde bucle';
+        h1.style = 'color: cyan';
+    }
+
+    const bSaludar = document.getElementById('btn-saludar');
+
+    bSaludar.onclick = function () {
+        const iNombre = document.getElementById('nombre');
+        console.log(iNombre);
+
+        alert('Hola ' + iNombre.value);
+
+        return false; // Cancelar la propagación del evento al navegador
+    };
+
+    const form = document.getElementById("form");
+
+    form.onsubmit = function (e) {
+        e.preventDefault();
+
+        const nombreCompleto = document.getElementById('nombre-completo');
+        const dni = document.getElementById('dni');
+
+        console.log(nombreCompleto, dni);
+
+        if (nombreCompleto.value === 'Javier Lete') {
+            if (!nombreCompleto.classList.contains('error')) {
+                //nombreCompleto.style = 'border: 1px solid red';
+                nombreCompleto.classList.add('error');
+                console.log('Nombre reservado');
+
+                const errorNombre = document.createElement('span'); // <span />
+
+                errorNombre.innerText = 'Ese nombre está reservado'; // <span>Ese nombre está reservado</span>
+                errorNombre.className = 'error'; // <span class="error">Ese nombre está reservado</span>
+
+                nombreCompleto.insertAdjacentElement('afterend', errorNombre);
+            }
+        } else {
+            //nombreCompleto.style = 'border: 1px solid black';
+            if (nombreCompleto.classList.contains('error')) {
+                nombreCompleto.nextElementSibling.remove();
+                nombreCompleto.classList.remove('error');
+            }
+        }
+
+        if (!validarDni(dni.value)) {
+            if (!dni.classList.contains('error')) {
+                //dni.style = 'border: 1px solid red';
+                dni.classList.add('error');
+                console.log('El DNI es incorrecto');
+
+                const errorSpan = document.createElement('span');
+
+                errorSpan.innerText = 'El DNI es incorrecto'; // <span>Ese nombre está reservado</span>
+                errorSpan.className = 'error'; // <span class="error">Ese nombre está reservado</span>
+
+                dni.insertAdjacentElement('afterend', errorSpan);
+            }
+        } else {
+            if (dni.classList.contains('error')) {
+                //dni.style = 'border: 1px solid black';
+                dni.classList.remove('error');
+                dni.nextElementSibling.remove();
+            }
+        }
+    };
+};
+
+function validarDni(dni) {
+    const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+
+    if (!/[XYZ\d]\d{7}[A-Z]/.test(dni)) {
+        return false;
+    }
+
+    switch (dni.charAt(0)) {
+        case 'X':
+            dni = dni.replace('X', '0');
+            break;
+        case 'Y':
+            dni = dni.replace('Y', '1');
+            break;
+        case 'Z':
+            dni = dni.replace('Z', '2');
+            break;
+    }
+
+    const numero = dni.substring(0, 8);
+
+    const letra = letras[numero % 23];
+
+    if (dni[8] !== letra) {
+        return false;
+    }
+
+    return true;
+}
 /*
 ES1
 ES2
@@ -11,13 +119,13 @@ ES2019
 ES2020
 ES2021
 */
-'use strict'; // ES5
 
 // interaccionesBasicas();
 // consola();
 //tiposDatos();
 // arrays();
-objetos();
+// objetos();
+// dom();
 
 function interaccionesBasicas() {
     alert('Hola Mundo desde fichero separado');
@@ -156,7 +264,7 @@ function objetos() {
     console.log(persona.getId());
     console.log(persona.getNombreCompleto());
 
-    var Persona = function(id, nombre, apellidos) {
+    var Persona = function (id, nombre, apellidos) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
